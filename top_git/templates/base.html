@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+
+
+<html lang="en">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+
+        <script src="/static/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+        
+ 
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        
+        {% block head %}
+
+        {% endblock %}
+        
+        <style>
+
+          *  {
+            font-family: 'Droid Sans', sans-serif;
+            }
+
+            {% block style  %} {% endblock %}
+
+            @media screen and (min-width:1000px){
+                    #navbar-brand{
+                        margin-left:80px;
+                    }
+            }
+            h1, h2, h3, h4, h5, h6{
+                    font-family:'Merriweather-Light',Georgia,serif;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" id = "navbar-brand" href="/" target = "_blank" style = "padding:0px;" ><img src = "{% static 'images/github.png' %}" style = "width:200px;height:50px;"></a><strong style="font-size:20px;">TopGit</strong>&nbsp;-<span style="color:green;line-height:50px;font-weight:bold;">finding the best github projects!</span>
+                </div>
+            </div><!-- /.container-fluid -->
+        </div>
+
+        <div style = "margin-top:70px;">
+
+            {% block main_base %}   {% endblock %}
+
+            <div class = "container" style = "">
+                <div class = "row">
+
+                {% block center_block %}  
+
+                {% endblock %}
+
+
+                </div>
+            </div>  
+
+        </div>
+
+
+    {% block scripts %} 
+
+
+    {% endblock %}
+                
+
+    {% block js_block %}
+         
+    {% endblock %}
+                    
+    </body>
+
+
+   
+
+</html>
